@@ -29,13 +29,14 @@ docker run -d \
   ghcr.io/blakeblackshear/frigate:stable
 ```
 
-:::
-
 ## Intel-based CPUs
 
 ### Via VAAPI
 
 VAAPI supports automatic profile selection so it will work automatically with both H.264 and H.265 streams. VAAPI is recommended for all generations of Intel-based CPUs if QSV does not work.
+
+:::note
+If running Frigate in docker, you either need to run in priviliged mode or be sure to map the /dev/dri/renderD128 devices to Frigate [see Docker section on installation page](installation.md#docker)
 
 ```yaml
 ffmpeg:
